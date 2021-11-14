@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&familia=Lexend+Deca&display=swap");
+:root {
+  --very-dark-blue: hsl(233, 47%, 7%);
+  --dark-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --main-paragraph: hsla(0, 0%, 100%, 0.75);
+  --stat-headings: hsl(0, 0%, 100%, 0.6);
+  --mobile-breakpoint: 375px;
+  --desktop-breakpoint: 1440px;
+}
+*{
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  background-color: var(--very-dark-blue);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+p {
+  margin: 0;
+}
+img{
+  object-fit: cover;
+  width: 100%;
+  
+}
+/*Estilos Mobile*/
+main {
+  width: 375px;
+  padding: 3rem 1.5rem;
+}
+.card {
+  background: var(--dark-blue);
+  border-radius: 0.5rem;
+  text-align: center;
+  font-family: Inter, "sans-serif";
+  overflow: hidden;
+}
+.image-mobile{
+  height: 16rem;
+}
+.image-desktop {
+  display: none;
+}
+.content{
+  padding: 2rem;
+}
+.title{
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+.title span{
+  color: var(--soft-violet);
+}
+.text{
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--main-paragraph);
+  line-height: 1.8rem;
+  font-size: .95rem;
+}
+.stats{
+  display: grid;
+  gap: 2rem;
+}
+.stats > div > p:first-child{
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.stats > div > p:last-child{
+  letter-spacing: .1rem;
+  color:var(--stat-headings);
+  text-transform: uppercase;
+  font-size: .75rem;
+  margin-top: .5rem;
+} 
+/*Estilos Desktop*/
+@media screen and (min-width: 1440px) {
+  body{
+    align-items: center;
+    height: 100vh;
+  }
+  main{
+    width: 1440px;
+    padding: 11rem 10.4rem;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: left;
+  }
+
+  .image-desktop {
+    display: block;
+    width: 50%;
+  }
+  .image-mobile {
+    display: none;
+  }
+  .content{
+    width: 50%;
+    padding: 4.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .title{
+    font-size: 2.2rem;
+  }
+  .text{
+    flex-grow: 1;
+    font-size: 1rem;
+  }
+  .stats{
+    grid-template-columns: repeat(3,1fr);
+
+  }
+}
